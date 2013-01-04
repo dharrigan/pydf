@@ -1,7 +1,7 @@
 # Configuration file for pydf
 #
 #
-# colours can be: 
+# colours can be:
 #  'none'    - no change from previous colour
 #  'default' - default system colour
 #
@@ -63,6 +63,9 @@ filled_fs_colour = 'red'
 # colour for filesystems with usage > FULL_THRESH
 full_fs_colour = 'on_red', 'green', 'blink'
 
+# colour for mapped devices (commonly seen with mounted encrypted filesystems)
+mapper_device_colour = 'magenta'
+
 # default format for displaying sizes "-h" or "-H" or "-m" or "-k" or "--blocks"
 sizeformat = "-h"
 
@@ -82,7 +85,7 @@ stretch_screen = 0.3
 # with filled_fs_colour (to show it is dangerously filled up)
 FILL_THRESH = 95.0
 
-# filesystem filled up over this limit is displayed with 
+# filesystem filled up over this limit is displayed with
 # full_fs_colour (to show it is FULL)
 FULL_THRESH = 99.0
 
@@ -90,15 +93,15 @@ FULL_THRESH = 99.0
 # keyword - one of 'fs' 'fstype' 'size' 'used' 'avail' 'perc' 'bar' 'on'.
 # size - if 'size' is integer, it is a minimal possible column width of the entry
 #        if 'size' is float, it is a minimal column width in percent of screen width
-# 
-# justify is either "l" for left justify, "r" for right justify or "c" for 
+#
+# justify is either "l" for left justify, "r" for right justify or "c" for
 # center.
 # You can use any order and any combination of keywords, but
 # be careful not to exceed the size of your screen
 
 
-#format = [    
-#            ('fs', 15, "l"), ('size', 9, "r"), 
+#format = [
+#            ('fs', 15, "l"), ('size', 9, "r"),
 #            ('used', 9, "r"), ('avail', 9, "r"), ('perc', 5, "r"),
 #            ('bar', 8, "l"), ('on', 16, "l")
 #         ]
@@ -106,8 +109,8 @@ FULL_THRESH = 99.0
 # this is somewhat conservative
 # use fixed width for everything, since you want it readable
 # only the bar is specified by percentage, because you want it dynamic
-format = [    
-            ('fs', 10, "l"), ('size', 5, "r"), 
+format = [
+            ('fs', 10, "l"), ('size', 5, "r"),
             ('used', 5, "r"), ('avail', 5, "r"), ('perc', 5, "r"),
             ('bar', 0.1, "l"), ('on', 11, "l")
          ]
